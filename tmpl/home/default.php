@@ -56,6 +56,16 @@ HTMLHelper::_('stylesheet', 'administrator/templates/atum/css/template.css', ['v
 		<div class="col-md-3">
 			<div class="card">
 				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=areas'); ?>">
+						<i class="icon-cart" style="font-size: 2rem;"></i>
+						<h3>Manage Areas</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body text-center">
 					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=settings'); ?>">
 						<i class="icon-cog" style="font-size: 2rem;"></i>
 						<h3>Settings</h3>
