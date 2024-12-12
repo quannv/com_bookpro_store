@@ -27,37 +27,27 @@
 		/>
 		
 		
-		<field name="from" type="areas"
+		<field name="area_id" type="areas"
 			class="input"
-			
 			label="COM_BOOKPRO_BUSTRIP_FROM"
 			required="true"
-			
 		/>
 		
 		
-		<field name="to" type="brands"
+		<field name="brand_id" type="brands"
 			class="input"
-		
 			label="COM_BOOKPRO_BUSTRIP_TO"
 			required="true"
-			
-			
 		/>
 		
-		<field name="vehicle_id" type="effects"
+		<field name="effect_id" type="effects"
 			class="inputbox"
-			
 			label="COM_BOOKPRO_VEHICLE"
-			required="true"
-			
-			
-			
+			required="true"		
 		/>
 
-
 		
-		<field name="operator_id" type="thickness"
+		<field name="thickness_id" type="thickness"
 			class="inputbox"
 			
 			label="COM_BOOKPRO_AGENT"
@@ -65,14 +55,7 @@
 			
 		/>
 		
-		<field name="start_time"	type="timepicker"
-			
-			label="COM_BOOKPRO_BUSTRIP_START_TIME"
-			
-			class="inputbox input-small"
-			
-			required="true"
-		/>
+		
 		
 		
 		<field name="start_loc"	type="text"
