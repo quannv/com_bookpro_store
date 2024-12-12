@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<fieldset>
+
+			<field name="id" type="text" default="0"
+				label="COM_BOOKPRO_BUS_ID" readonly="true" class="readonly"
+				description="JGLOBAL_FIELD_ID_DESC" />
+
+			<field name="operator_id" type="foreignkey" class="inputbox"
+				label="COM_BOOKPRO_AGENT" 
+				input_type="list" table="#__bookpro_operator" key_field="company"
+				value_field="id" />
+
+			<field name="title" type="text" label="COM_BOOKPRO_TITLE"	 required="true" />
+
+			<field name="seat" type="text" size="40" class="inputbox"
+				label="COM_BOOKPRO_TOTAL_SEAT" description="COM_BOOKPRO_TOTAL_SEAT"  />
+
+			<field name="image" type="media" label="COM_BOOKPRO_IMAGE"
+				description="COM_BOOKPRO_IMAGE" />
+
+			<field name="desc" type="editor" label="COM_BOOKPRO_DESCRIPTION"
+				description="COM_BOOKPRO_DESCRIPTION" />
+
+			
+
+			<field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC"
+				class="btn-group" size="1" default="1">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+
+			</field>
+
+		</fieldset>
+	</fieldset>
+</form>

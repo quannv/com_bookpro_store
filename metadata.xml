@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="5.0" method="upgrade">
+    <name>com_bookpro</name>
+    <creationDate>2024-12-02</creationDate>
+    <author>Your Name</author>
+    <authorEmail>you@example.com</authorEmail>
+    <version>1.0.0</version>
+    <description>BookPro Component</description>
+    <files>
+        <folder>administrator</folder>
+        <folder>site</folder>
+    </files>
+    <administration>
+        <menu>com_bookpro</menu>
+    </administration>
+</extension>

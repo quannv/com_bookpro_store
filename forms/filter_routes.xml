@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addfieldprefix="Joombooking\Component\Bookpro\Administrator\Field">
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_BOOKPRO_FILTER_SEARCH_LABEL"
+			
+			hint="JSEARCH_FILTER"
+		/>
+
+		<field
+			name="filter_from_id"
+			type="airports"
+			label="COM_BOOKPRO_AIRPORTS_FROM"
+			class="js-select-submit-on-change"
+			>
+			<option value="">COM_BOOKPRO_SELECT_AIRPORT</option>
+		</field>	
+        <field
+			name="filter_to_id"
+			type="airports"
+			label="COM_BOOKPRO_AIRPORTS_TO"
+			class="js-select-submit-on-change"
+			>
+			<option value="">COM_BOOKPRO_SELECT_AIRPORT</option>
+		</field>	
+
+	</fields>
+	<fields name="list">
+		
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			class="js-select-submit-on-change"
+		/>
+	</fields>
+</form>

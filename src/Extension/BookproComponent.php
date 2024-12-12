@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @package     Joomla.Administrator
+ * @subpackage  com_banners
+ *
+ * @copyright   (C) 2018 Open Source Matters, Inc. <https://www.joomla.org>
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+namespace Joombooking\Component\Bookpro\Administrator\Extension;
+
+use Joomla\CMS\Component\Router\RouterServiceInterface;
+use Joomla\CMS\Component\Router\RouterServiceTrait;
+use Joomla\CMS\Extension\BootableExtensionInterface;
+use Joomla\CMS\Extension\MVCComponent;
+use Joomla\CMS\HTML\HTMLRegistryAwareTrait;
+use Joombooking\Component\Bookpro\Administrator\Service\Html\Bookpro;
+use Joomla\Database\DatabaseInterface;
+use Psr\Container\ContainerInterface;
+
+// phpcs:disable PSR1.Files.SideEffects
+\defined('JPATH_PLATFORM') or die;
+// phpcs:enable PSR1.Files.SideEffects
+
+/**
+ * Component class for com_banners
+ *
+ * @since  4.0.0
+ */
+class BookproComponent extends MVCComponent implements
+    BootableExtensionInterface,
+    RouterServiceInterface
+{
+    use HTMLRegistryAwareTrait;
+    use RouterServiceTrait;
+
+
+    /**
+     * Booting the extension. This is the function to set up the environment of the extension like
+     * registering new class loaders, etc.
+     *
+     * If required, some initial set up can be done from services of the container, eg.
+     * registering HTML services.
+     *
+     * @param   ContainerInterface  $container  The container
+     *
+     * @return  void
+     *
+     * @since   4.0.0
+     */
+    public function boot(ContainerInterface $container)
+    {
+        $bookpro = new Bookpro();
+        $bookpro->setDatabase($container->get(DatabaseInterface::class));
+
+        $this->getRegistry()->register('bookpro', $bookpro);
+    }
+
+    /**
+     * Returns the table for the count items functions for the given section.
+     *
+     * @param   ?string  $section  The section
+     *
+     * @return  string|null
+     *
+     * @since   4.0.0
+     */
+    protected function getTableNameForSection(string $section = null)
+    {
+        return 'bookpro';
+    }
+}
