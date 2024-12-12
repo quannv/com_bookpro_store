@@ -58,11 +58,7 @@ if ($saveOrder) {
 		<table class="table table-striped" id="busList">
 			<thead>
 				<tr>
-					<?php if (isset($this->items[0]->ordering)) : ?>
-						<th width="1%" class="nowrap center hidden-phone">
-							<?php echo HtmlHelper::_('grid.sort', '<i class="icon-menu-2"></i>', 'a.ordering', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING'); ?>
-						</th>
-					<?php endif; ?>
+					
 					<th width="1%" class="hidden-phone">
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo Text::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
