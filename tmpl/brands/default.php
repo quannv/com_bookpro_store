@@ -64,19 +64,19 @@ if ($saveOrder) {
 					</th>
 					<?php if (isset($this->items[0]->state)) : ?>
 						<th width="1%" class="nowrap center">
-							<?php echo HtmlHelper::_('grid.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
+							<?php echo HtmlHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
 						</th>
 					<?php endif; ?>
 
 					<th class='left'>
-						<?php echo HtmlHelper::_('grid.sort',  'COM_BOOKPRO_TITLE', 'a.title', $listDirn, $listOrder); ?>
+						<?php echo HtmlHelper::_('searchtools.sort',  'COM_BOOKPRO_TITLE', 'a.title', $listDirn, $listOrder); ?>
 					</th>
 
 		
 
 					<?php if (isset($this->items[0]->id)) : ?>
 						<th width="1%" class="nowrap center hidden-phone">
-							<?php echo HtmlHelper::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
+							<?php echo HtmlHelper::_('searchtools.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 						</th>
 					<?php endif; ?>
 				</tr>

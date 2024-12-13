@@ -23,8 +23,8 @@ defined('_JEXEC') or die;
 $document = $this->getDocument();
 $user	= Factory::getUser();
 $userId	= $user->get('id');
-$listOrder	= $this->state->get('list.ordering');
-$listDirn	= $this->state->get('list.direction');
+		$listOrder = $this->escape($this->state->get('list.ordering'));
+		$listDirn  = $this->escape($this->state->get('list.direction'));
 $canOrder	= $user->authorise('core.edit.state', 'com_bookpro');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder) {
