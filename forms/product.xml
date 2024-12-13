@@ -35,13 +35,13 @@
 		/>
 		
 		
-		<field name="brand_id" type="brands"
+		<field name="brand_id" type="brand"
 			class="input"
 			label="COM_BOOKPRO_BUSTRIP_TO"
 			required="true"
 		/>
 		
-		<field name="effect_id" type="effects"
+		<field name="design_id" type="design"
 			class="inputbox"
 			label="COM_BOOKPRO_VEHICLE"
 			required="true"		

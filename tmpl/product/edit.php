@@ -36,16 +36,13 @@ $wa->useScript('keepalive')
 		<?php echo HTMLHelper::_('bootstrap.startTabSet', 'myTab', array('active' => 'general')); ?>
 		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'general', Text::_('COM_BOOKPRO_BUSTRIP', true)); ?>
 
-		<?php echo $this->form->renderField('from'); ?>
-		<?php echo $this->form->renderField('to'); ?>
-		<?php echo $this->form->renderField('code'); ?>
-		<?php echo $this->form->renderField('operator_id');  ?>
-		<?php echo $this->form->renderField('vehicle_id');  ?>
+		<?php echo $this->form->renderField('sku'); ?>
 		<?php echo $this->form->renderField('title'); ?>
+		<?php echo $this->form->renderField('design_id');  ?>
+		<?php echo $this->form->renderField('brand_id');  ?>
+
 		<?php echo $this->form->renderField('image'); ?>
 		<?php echo $this->form->renderField('price'); ?>
-		<?php echo $this->form->renderField('start_time');  ?>
-		<?php echo $this->form->renderField('duration');  ?>
 
 		<?php //echo $this->form->renderField('door');  
 		?>
