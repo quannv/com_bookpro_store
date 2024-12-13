@@ -68,14 +68,19 @@ class ProductsModel extends ListModel
         $query->select(array(
             'product.*,brands.title AS brand_title',
             'designs.title AS design_title',
-            
-
+            "(SELECT GROUP_CONCAT(title SEPARATOR ', ')
+            FROM #__bookpro_areas
+            WHERE FIND_IN_SET(id, product.areas_id)) AS area_titles",
+            "(SELECT GROUP_CONCAT(title SEPARATOR ', ')
+            FROM #__bookpro_effects
+            WHERE FIND_IN_SET(id, product.effects_id)) AS effect_titles",
         ));
 
         $query->from('#__bookpro_products AS product');
       
         $query->join('left', '#__bookpro_brands AS brands ON brands.id = product.brand_id ');
         $query->join('left', '#__bookpro_designs AS designs ON designs.id = product.design_id ');
+        $query->join('left', '#__bookpro_thicknesss AS thickness ON thickness.id = product.thickness_id ');
 
         
         $design_id = $this->getState('filter.design_id');

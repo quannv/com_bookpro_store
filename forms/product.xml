@@ -78,6 +78,15 @@
 			label="COM_BOOKPRO_IMAGE"
 			description="COM_BOOKPRO_IMAGE"
 			/>
+
+		<field name="images"
+		type="media"
+		
+		multiple="true"
+		label="COM_BOOKPRO_IMAGE"
+		description="COM_BOOKPRO_IMAGE"
+		required="false"
+		/>
 		
 		<field name="policy" type="editor" buttons="true"
 	   hide="pagebreak,readmore" class="inputbox" filter="JComponentHelper::filterText"

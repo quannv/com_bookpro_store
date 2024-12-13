@@ -32,8 +32,10 @@ class EffectField extends ListField
 		$options = $this->getOptions();
 
 		$values = [];
+		if (!empty($this->value)) {
 		foreach ($this->value as $valuet) {
 			$values[] = $valuet;
+		}
 		}
 
 		// Ensure $this->value is an array for multiple selection

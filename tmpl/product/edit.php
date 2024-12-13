@@ -43,7 +43,7 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('areas_id');  ?>
 		<?php echo $this->form->renderField('thickness_id');  ?>
 		<?php echo $this->form->renderField('effects_id');  ?>
-		<?php echo $this->form->renderField('image'); ?>
+
 
 		<?php echo $this->form->renderField('state');  ?>
 		<?php echo HtmlHelper::_('bootstrap.endTab');
@@ -51,7 +51,17 @@ $wa->useScript('keepalive')
 		?>
 
 		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'busstoptab', Text::_('Detail')); ?>
+
+
 		<?php echo $this->form->renderField('description'); ?>
+		<?php echo HtmlHelper::_('bootstrap.endTab'); ?>
+
+		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'image', Text::_('Images')); ?>
+
+
+		<?php echo $this->form->renderField('image'); ?>
+		<?php echo $this->form->renderField('images'); ?>
+
 		<?php echo HtmlHelper::_('bootstrap.endTab'); ?>
 
 		<?php echo HtmlHelper::_('bootstrap.endTabSet'); ?>

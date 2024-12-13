@@ -20,40 +20,10 @@ use Joomla\CMS\Language\Text;
 defined('_JEXEC') or die('Restricted access');
 
 
-class AreaField extends ListField
+class ColorField extends ListField
 {
 
-	protected $type = 'Area';
-
-
-	public function getInput()
-	{
-
-		HTMLHelper::_('formbehavior.chosen', 'select');
-		// Fetch the options
-		$options = $this->getOptions();
-
-		$values = [];
-
-		if (!empty($this->value)) {
-			foreach ($this->value as $valuet) {
-				$values[] = $valuet;
-			}
-		}
-		
-
-		// Ensure $this->value is an array for multiple selection
-		$selectedValues = $values;
-		if (!is_array($selectedValues)) {
-			$selectedValues = [$selectedValues];
-		}
-		// Render the dropdown
-		return HTMLHelper::_('select.genericlist', $options, $this->name, [
-			'multiple' => true,
-			'style' => 'width: 100%;'
-		], 'value', 'text', $selectedValues, $this->id);
-	}
-
+	protected $type = 'Color';
 
 	public function getOptions()
 	{
@@ -69,11 +39,11 @@ class AreaField extends ListField
 			]
 		)
 
-			->from('#__bookpro_areas')->order('title ASC');
+			->from('#__bookpro_colors')->order('title ASC');
 		$db->setQuery($query);
 		try {
 			$options = $db->loadObjectList();
-			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_AREA')));
+			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_COLOR')));
 			return $options;
 		} catch (\RuntimeException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');

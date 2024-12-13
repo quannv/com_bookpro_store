@@ -9,7 +9,7 @@
  * @version 	$Id: view.html.php 26 2012-07-08 16:07:54Z quannv $
  **/
 
-namespace Joombooking\Component\Bookpro\Administrator\View\Effects;
+namespace Joombooking\Component\Bookpro\Administrator\View\Colors;
 
 defined('_JEXEC') or die('Restricted access');
 
@@ -84,14 +84,14 @@ class HtmlView extends BaseHtmlView
     }
     protected function addToolbar()
     {
-        ToolbarHelper::title(Text::_('Effects'), 'location');
-        ToolBarHelper::addNew('effect.add');
-        ToolBarHelper::editList('effect.edit');
+        ToolbarHelper::title(Text::_('Colors'), 'location');
+        ToolBarHelper::addNew('color.add');
+        ToolBarHelper::editList('color.edit');
         ToolBarHelper::divider();
-        ToolBarHelper::publish('effects.publish', 'Publish', true);
-        ToolBarHelper::unpublish('effects.unpublish', 'UnPublish', true);
+        ToolBarHelper::publish('colors.publish', 'Publish', true);
+        ToolBarHelper::unpublish('colors.unpublish', 'UnPublish', true);
         ToolBarHelper::divider();
 
-        ToolBarHelper::deleteList('', 'effects.delete');
+        ToolBarHelper::deleteList('', 'colors.delete');
     }
 }

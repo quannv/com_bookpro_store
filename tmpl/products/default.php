@@ -42,7 +42,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 					</th>
 					<th width="1%"><?php echo HtmlHelper::_('grid.sort', Text::_('JSTATUS'), 'state', $listDirn, $listOrder); ?>
 					</th>
-					
+
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_SKU'); ?>
 
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_IMAGE'); ?>
@@ -59,10 +59,6 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 
 
-					<th width="7%"><?php echo Text::_('COM_BOOKPRO_BUSTRIP_PRICE'); ?>
-					</th>
-
-
 				</tr>
 			</thead>
 
@@ -77,7 +73,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 						<td class="checkboxCell"><?php echo HtmlHelper::_('grid.checkedout', $subject, $i); ?>
 						</td>
 						<td>
-							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'bustrips.', true, 'cb', null, null); ?>
+							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'products.', true, 'cb', null, null); ?>
 						</td>
 						<td>
 							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=product.edit&id=' . $subject->id); ?>">
@@ -91,20 +87,14 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 						</td>
 
-						<td><?php echo $subject->area_title; ?>
+						<td><?php echo $subject->area_titles; ?>
+						</td>
+
+						<td><?php echo $subject->brand_title; ?>
 						</td>
 
 						<td><?php echo $subject->design_title; ?>
 						</td>
-
-
-						<td>
-
-							<?php echo CurrencyHelper::formatprice($subject->price)
-							?><br />
-
-						</td>
-
 
 					<?php
 				}
