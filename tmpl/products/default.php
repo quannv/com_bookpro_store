@@ -42,19 +42,22 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 					</th>
 					<th width="1%"><?php echo HtmlHelper::_('grid.sort', Text::_('JSTATUS'), 'state', $listDirn, $listOrder); ?>
 					</th>
-					<th class="title" width="10%"><?php echo HtmlHelper::_('grid.sort', Text::_('COM_BOOKPRO_TITLE'), 'title', $listDirn, $listOrder); ?>
-					</th>
+					
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_SKU'); ?>
 
-					<th width="5%"><?php echo Text::_('COM_BOOKPRO_TITLE'); ?>
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_IMAGE'); ?>
 					</th>
+
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_AREA'); ?>
+					</th>
+
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_DESIGN'); ?>
+					</th>
+
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_BRAND'); ?>
 					</th>
 
-					<th width="5%"><?php echo Text::_('COM_BOOKPRO_BUSTRIP_START_TIME'); ?>
-					</th>
-					<th width="5%"><?php echo Text::_('COM_BOOKPRO_BUSTRIP_END_TIME'); ?>
-					</th>
+
 
 					<th width="7%"><?php echo Text::_('COM_BOOKPRO_BUSTRIP_PRICE'); ?>
 					</th>
@@ -62,7 +65,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 				</tr>
 			</thead>
-			
+
 			<tbody>
 				<?php
 				for ($i = 0; $i < count($this->items); $i++) {
@@ -79,25 +82,22 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 						<td>
 							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=product.edit&id=' . $subject->id); ?>">
 
-								<span style="<?php if (!$subject->parent_id) echo "font-weight:bold;" ?>"><?php echo $subject->title; ?></span> </a>
-						</td>
-						
-						<td><?php echo $subject->sku; ?>
-						</td>
-						<td><?php echo $subject->brand_title; ?>
+								<?php echo $subject->sku; ?></a>
 						</td>
 
-						<td><?php echo Factory::getDate($subject->start_time)->format('H:i'); ?></td>
-						<td><?php echo Factory::getDate($subject->end_time)->format('H:i'); ?></td>
+						<td>
 
-						<?php
-						$color = '';
-						if ($subject->price > 0) {
-							$color = 'style="color:blue;"';
-						} else {
-							$color = 'style="color:red"';
-						}
-						?>
+							<img src=" <?php echo Uri::root() . $subject->image; ?>" style="width: 100px; height: 100px;">
+
+						</td>
+
+						<td><?php echo $subject->area_title; ?>
+						</td>
+
+						<td><?php echo $subject->design_title; ?>
+						</td>
+
+
 						<td>
 
 							<?php echo CurrencyHelper::formatprice($subject->price)

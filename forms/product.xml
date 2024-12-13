@@ -62,6 +62,13 @@
 			required="true"
 			
 		/>
+
+		<field name="description"	type="editor"
+			label="COM_BOOKPRO_DESCRIPTION"
+			description="COM_BOOKPRO_DESCRIPTION"
+			class="inputbox"
+			required="true"
+		/>
 		
 	
 

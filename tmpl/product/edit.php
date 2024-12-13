@@ -34,7 +34,7 @@ $wa->useScript('keepalive')
 
 	<div class="form-horizontal">
 		<?php echo HTMLHelper::_('bootstrap.startTabSet', 'myTab', array('active' => 'general')); ?>
-		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'general', Text::_('COM_BOOKPRO_BUSTRIP', true)); ?>
+		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'general', Text::_('Basic', true)); ?>
 
 		<?php echo $this->form->renderField('sku'); ?>
 		<?php echo $this->form->renderField('title'); ?>
@@ -44,22 +44,16 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('thickness_id');  ?>
 		<?php echo $this->form->renderField('effect_id');  ?>
 		<?php echo $this->form->renderField('image'); ?>
-
-
-		<?php //echo $this->form->renderField('door');  
-		?>
-		<?php //echo $this->form->renderField('drop_door');  
-		?>
+	
 		<?php echo $this->form->renderField('state');  ?>
 		<?php echo HtmlHelper::_('bootstrap.endTab');
 
-
 		?>
 
-		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'busstoptab', Text::_('COM_BOOKPRO_DESCRIPTION')); ?>
-		echo $this->form->renderField('policy');
-		echo HtmlHelper::_('bootstrap.endTab');
-		?>
+		<?php echo HtmlHelper::_('bootstrap.addTab', 'myTab', 'busstoptab', Text::_('Detail')); ?>
+		<?php echo $this->form->renderField('description'); ?>
+		<?php echo HtmlHelper::_('bootstrap.endTab'); ?>
+
 		<?php echo HtmlHelper::_('bootstrap.endTabSet'); ?>
 	</div>
 
