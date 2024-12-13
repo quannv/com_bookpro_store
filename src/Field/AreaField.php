@@ -25,6 +25,32 @@ class AreaField extends ListField
 
 	protected $type = 'Area';
 
+
+	public function getInput()
+	{
+
+		HTMLHelper::_('formbehavior.chosen', 'select');
+		// Fetch the options
+		$options = $this->getOptions();
+
+		$values = [];
+		foreach ($this->value as $valuet) {
+			$values[] = $valuet;
+		}
+
+		// Ensure $this->value is an array for multiple selection
+		$selectedValues = $values;
+		if (!is_array($selectedValues)) {
+			$selectedValues = [$selectedValues];
+		}
+		// Render the dropdown
+		return HTMLHelper::_('select.genericlist', $options, $this->name, [
+			'multiple' => true,
+			'style' => 'width: 100%;'
+		], 'value', 'text', $selectedValues, $this->id);
+	}
+
+
 	public function getOptions()
 	{
 

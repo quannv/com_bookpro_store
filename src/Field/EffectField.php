@@ -19,15 +19,40 @@ use Joomla\CMS\Language\Text;
 
 defined('_JEXEC') or die('Restricted access');
 
-
 class EffectField extends ListField
 {
-
 	protected $type = 'Effect';
+
+
+	public function getInput()
+	{
+
+		HTMLHelper::_('formbehavior.chosen', 'select');
+		// Fetch the options
+		$options = $this->getOptions();
+
+		$values = [];
+		foreach ($this->value as $valuet) {
+			$values[] = $valuet;
+		}
+
+		// Ensure $this->value is an array for multiple selection
+		$selectedValues = $values;
+		if (!is_array($selectedValues)) {
+			$selectedValues = [$selectedValues];
+		}
+		// Render the dropdown
+		return HTMLHelper::_('select.genericlist', $options, $this->name, [
+			'multiple' => true,
+			
+			'style' => 'width: 100%;'
+			// Adjust size as needed
+		], 'value', 'text', $selectedValues, $this->id);
+	}
+
 
 	public function getOptions()
 	{
-
 		$options = [];
 		$db = Factory::getDBO();
 		$query = $db->getQuery(true);
@@ -38,15 +63,21 @@ class EffectField extends ListField
 				$db->quoteName('title', 'text'),
 			]
 		)
+			->from('#__bookpro_effects')
+			->order('title ASC');
 
-			->from('#__bookpro_effects')->order('title ASC');
 		$db->setQuery($query);
+
 		try {
 			$options = $db->loadObjectList();
-			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_EFFECT')));
-			return $options;
+
+			// Add a default "Select Effect" option
+			array_unshift($options, HTMLHelper::_('select.option', '', Text::_('COM_BOOKPRO_SELECT_EFFECT')));
 		} catch (\RuntimeException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
 		}
+
+		return $options;
 	}
 }
+

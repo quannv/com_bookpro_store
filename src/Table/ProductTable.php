@@ -33,89 +33,45 @@ class ProductTable extends Table
 	}
 
 
-	function check()
-	{
-
-		if (empty($this->alias)) {
-			$this->alias = $this->title;
-		}
-		return true;
-	}
-
-
-
 	public function store($updateNulls = false)
 	{
 
 		return parent::store($updateNulls);
 	}
-	public function publish($pks = null, $state = 1, $userId = 0)
+	
+	public function bind($data, $ignore = array())
 	{
-		$k = $this->_tbl_key;
-
-		// Sanitize input.
-		ArrayHelper::toInteger($pks);
-		$userId = (int) $userId;
-		$state  = (int) $state;
-
-		// If there are no primary keys set check to see if the instance key is set.
-		if (empty($pks)) {
-			if ($this->$k) {
-				$pks = array($this->$k);
-			}
-			// Nothing to set publishing state on, return false.
-			else {
-				$this->setError(Text::_('JLIB_DATABASE_ERROR_NO_ROWS_SELECTED'));
-				return false;
-			}
+		if (isset($data['areas_id']) && is_array($data['areas_id'])) {
+			// Convert array to comma-separated string
+			$data['areas_id'] = implode(',', $data['areas_id']);
 		}
 
-		// Build the WHERE clause for the primary keys.
-		$where = $k . '=' . implode(' OR ' . $k . '=', $pks);
-
-		// Determine if there is checkin support for the table.
-		if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time')) {
-			$checkin = '';
-		} else {
-			$checkin = ' AND (checked_out = 0 OR checked_out = ' . (int) $userId . ')';
+		if (isset($data['effects_id']) && is_array($data['effects_id'])) {
+			// Convert array to comma-separated string
+			$data['effects_id'] = implode(',', $data['effects_id']);
 		}
 
-		// Update the publishing state for rows with the given primary keys.
-		$this->_db->setQuery(
-			'UPDATE ' . $this->_db->quoteName($this->_tbl) .
-				' SET ' . $this->_db->quoteName('state') . ' = ' . (int) $state .
-				' WHERE (' . $where . ')' .
-				$checkin
-		);
-
-		try {
-			$this->_db->execute();
-		} catch (Exception $e) {
-			$this->setError($e->getMessage());
-			return false;
-		}
-
-		// If checkin is supported and all rows were adjusted, check them in.
-		if ($checkin && (count($pks) == $this->_db->getAffectedRows())) {
-			// Checkin the rows.
-			foreach ($pks as $pk) {
-				$this->checkin($pk);
-			}
-		}
-
-		// If the JTable instance value is in the list of primary keys that were set, set the instance.
-		if (in_array($this->$k, $pks)) {
-			$this->state = $state;
-		}
-
-		$this->setError('');
-		return true;
+		return parent::bind($data, $ignore);
 	}
 
-	public function bind($array, $ignore = '')
+	public function load($keys = null, $reset = true)
 	{
+		$result = parent::load($keys, $reset);
 
+		if ($result) {
+			if (!empty($this->areas_id)) {
+				// Convert comma-separated string to array for areas_id
+				$this->areas_id = explode(',', $this->areas_id);
+			}
 
-		return parent::bind($array, $ignore);
+			if (!empty($this->effects_id)) {
+				// Convert comma-separated string to array for effects_id
+				$this->effects_id = explode(',', $this->effects_id);
+			}
+		}
+
+		return $result;
 	}
+
+
 }

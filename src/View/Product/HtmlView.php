@@ -28,6 +28,10 @@ class HtmlView extends BaseHtmlView
 
 		$this->form		= $this->get('Form');
 		$this->item		= $this->get('Item');
+
+		// echo "<pre>";
+		// echo print_r($this->item);
+		// echo "</pre>";
 		$this->state	= $this->get('State');
 		$this->addToolbar();
 		parent::display($tpl);

@@ -27,7 +27,7 @@
 		/>
 		
 		
-		<field name="area_id" type="area"
+		<field name="areas_id" type="area"
 			class="input"
 			label="Area of use"
 			multiple="true"
@@ -55,9 +55,9 @@
 			required="true"
 			
 		/>
-		<field name="effect_id" type="effect"
+		<field name="effects_id" type="effect"
 			class="inputbox"
-			
+			multiple="true"
 			label="Effect"
 			required="true"
 			
