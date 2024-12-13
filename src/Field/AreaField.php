@@ -20,10 +20,10 @@ use Joomla\CMS\Language\Text;
 defined('_JEXEC') or die('Restricted access');
 
 
-class BrandField extends ListField
+class AreaField extends ListField
 {
 
-	protected $type = 'Brand';
+	protected $type = 'Area';
 
 	public function getOptions()
 	{
@@ -39,11 +39,11 @@ class BrandField extends ListField
 			]
 		)
 
-			->from('#__bookpro_brands')->order('title ASC');
+			->from('#__bookpro_areas')->order('title ASC');
 		$db->setQuery($query);
 		try {
 			$options = $db->loadObjectList();
-			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_BRAND')));
+			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_AREA')));
 			return $options;
 		} catch (\RuntimeException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');

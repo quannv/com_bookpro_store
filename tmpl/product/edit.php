@@ -40,9 +40,11 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('title'); ?>
 		<?php echo $this->form->renderField('design_id');  ?>
 		<?php echo $this->form->renderField('brand_id');  ?>
-
+		<?php echo $this->form->renderField('area_id');  ?>
+		<?php echo $this->form->renderField('thickness_id');  ?>
+		<?php echo $this->form->renderField('effect_id');  ?>
 		<?php echo $this->form->renderField('image'); ?>
-		<?php echo $this->form->renderField('price'); ?>
+
 
 		<?php //echo $this->form->renderField('door');  
 		?>

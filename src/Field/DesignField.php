@@ -43,7 +43,7 @@ class DesignField extends ListField
 		$db->setQuery($query);
 		try {
 			$options = $db->loadObjectList();
-			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_VEHICLE')));
+			array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_DESIGN')));
 			return $options;
 		} catch (\RuntimeException $e) {
 			Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
