@@ -84,7 +84,7 @@ class HtmlView extends BaseHtmlView
     }
     protected function addToolbar()
     {
-        ToolbarHelper::title(Text::_('Brands'), 'location');
+        ToolbarHelper::title(Text::_('Designs'), 'location');
         ToolBarHelper::addNew('design.add');
         ToolBarHelper::editList('design.edit');
         ToolBarHelper::divider();

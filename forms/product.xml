@@ -4,7 +4,7 @@
 		<field name="id" type="hidden" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
 			description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
 		
-		<field name="sku"	type="text"
+		<field name="sku" type="text"
 			
 			label="COM_BOOKPRO_SKU"
 			
@@ -30,6 +30,7 @@
 		<field name="area_id" type="areas"
 			class="input"
 			label="COM_BOOKPRO_BUSTRIP_FROM"
+			multiple="true"
 			required="true"
 		/>
 		
@@ -57,24 +58,7 @@
 		
 		
 		
-		
-		<field name="start_loc"	type="text"
-			
-			label="COM_BOOKPRO_BUSTRIP_START_LOC"
-			description="COM_BOOKPRO_BUSTRIP_START_LOC"
-			class="inputbox"
-			size="30"
-			
-		/>
-		
-		<field name="end_loc"	type="text"
-			
-			label="COM_BOOKPRO_BUSTRIP_END_LOC"
-			description="COM_BOOKPRO_BUSTRIP_END_LOC"
-			class="inputbox"
-			size="30"
-			
-		/>
+
 		
 		<field name="duration"	type="text"
 			

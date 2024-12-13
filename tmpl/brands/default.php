@@ -58,7 +58,7 @@ if ($saveOrder) {
 		<table class="table table-striped" id="busList">
 			<thead>
 				<tr>
-					
+
 					<th width="1%" class="hidden-phone">
 						<input type="checkbox" name="checkall-toggle" value="" title="<?php echo Text::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 					</th>
@@ -72,7 +72,7 @@ if ($saveOrder) {
 						<?php echo HtmlHelper::_('searchtools.sort',  'COM_BOOKPRO_TITLE', 'a.title', $listDirn, $listOrder); ?>
 					</th>
 
-		
+
 
 					<?php if (isset($this->items[0]->id)) : ?>
 						<th width="1%" class="nowrap center hidden-phone">
@@ -81,20 +81,7 @@ if ($saveOrder) {
 					<?php endif; ?>
 				</tr>
 			</thead>
-			<tfoot>
-				<?php
-				if (isset($this->items[0])) {
-					$colspan = count(get_object_vars($this->items[0]));
-				} else {
-					$colspan = 10;
-				}
-				?>
-				<tr>
-					<td colspan="<?php echo $colspan ?>">
-						<?php echo $this->pagination->getListFooter(); ?>
-					</td>
-				</tr>
-			</tfoot>
+			
 			<tbody>
 				<?php foreach ($this->items as $i => $item) :
 					$ordering   = ($listOrder == 'a.ordering');
@@ -138,7 +125,7 @@ if ($saveOrder) {
 
 						</td>
 
-					
+
 
 						<?php if (isset($this->items[0]->id)) : ?>
 							<td class="center hidden-phone">
@@ -149,6 +136,7 @@ if ($saveOrder) {
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		<?php echo $this->pagination->getListFooter(); ?>
 
 		<input type="hidden" name="task" value="" />
 		<input type="hidden" name="boxchecked" value="0" />
