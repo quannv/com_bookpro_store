@@ -10,7 +10,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<version>2.3</version>
 	<namespace path="src">Joombooking\Component\Bookpro</namespace>
-	<description>Transport Booking Component</description>
+	<description>JStore Component</description>
 	<languages folder="language/site">
 		<language tag="en-GB">en-GB/en-GB.com_bookpro.ini</language>
 	</languages>
@@ -136,8 +136,6 @@
 				<field name="rs_mobile" default="1" />
 				<field name="rs_zip" default="0" />
 				<field name="rs_states" default="0" />
-				<field name="customers_usergroup" default="2" />
-				<field name="passenger_status" default="1" />
 					
 			</fieldset>
 		</fields>

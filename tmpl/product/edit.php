@@ -39,7 +39,9 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('sku'); ?>
 		<?php echo $this->form->renderField('title'); ?>
 		<?php echo $this->form->renderField('design_id');  ?>
+		<?php echo $this->form->renderField('color_id');  ?>
 		<?php echo $this->form->renderField('brand_id');  ?>
+
 		<?php echo $this->form->renderField('areas_id');  ?>
 		<?php echo $this->form->renderField('thickness_id');  ?>
 		<?php echo $this->form->renderField('effects_id');  ?>

@@ -55,6 +55,13 @@
 			required="true"
 			
 		/>
+
+		<field name="color_id" type="color"
+			class="inputbox"
+			label="Color"
+			required="true"
+			
+		/>
 		<field name="effects_id" type="effect"
 			class="inputbox"
 			multiple="true"
