@@ -83,6 +83,16 @@ HTMLHelper::_('stylesheet', 'administrator/templates/atum/css/template.css', ['v
 				</div>
 			</div>
 		</div>
+		<div class="col-md-3 mb-4">
+			<div class="card h-100">
+				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=types'); ?>">
+						<i class="icon-list" style="font-size: 2rem;"></i>
+						<h3>Manage Types</h3>
+					</a>
+				</div>
+			</div>
+		</div>
 
 		<div class="col-md-3 mb-4">
 			<div class="card h-100">
