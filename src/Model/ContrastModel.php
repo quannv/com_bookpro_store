@@ -28,7 +28,7 @@ use Joomla\Database\ParameterType;
  *
  * @since  1.6
  */
-class SurfaceModel extends AdminModel
+class ContrastModel extends AdminModel
 {
 
     /**
@@ -45,7 +45,7 @@ class SurfaceModel extends AdminModel
      * @var    string
      * @since  3.2
      */
-    public $typeAlias = 'com_bookpro.surface';
+    public $typeAlias = 'com_bookpro.contrast';
 
 
 
@@ -65,7 +65,7 @@ class SurfaceModel extends AdminModel
     public function getForm($data = [], $loadData = true)
     {
         // Get the form.
-        $form = $this->loadForm('com_bookpro.surface', 'surface', ['control' => 'jform', 'load_data' => $loadData]);
+        $form = $this->loadForm('com_bookpro.contrast', 'contrast', ['control' => 'jform', 'load_data' => $loadData]);
 
         if (empty($form)) {
             return false;

@@ -77,7 +77,7 @@ HTMLHelper::_('stylesheet', 'administrator/templates/atum/css/template.css', ['v
 			<div class="card h-100">
 				<div class="card-body text-center">
 					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=colors'); ?>">
-						<i class="icon-list" style="font-size: 2rem;"></i>
+						<i class="icon-palette" style="font-size: 2rem;"></i>
 						<h3>Manage Colors</h3>
 					</a>
 				</div>
@@ -97,9 +97,53 @@ HTMLHelper::_('stylesheet', 'administrator/templates/atum/css/template.css', ['v
 		<div class="col-md-3 mb-4">
 			<div class="card h-100">
 				<div class="card-body text-center">
-					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=settings'); ?>">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=sizes'); ?>">
+						<i class="icon-list" style="font-size: 2rem;"></i>
+						<h3>Manage Sizes</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 mb-4">
+			<div class="card h-100">
+				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=surfaces'); ?>">
+						<i class="icon-list" style="font-size: 2rem;"></i>
+						<h3>Manage Surfaces</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 mb-4">
+			<div class="card h-100">
+				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=facetiles'); ?>">
+						<i class="icon-list" style="font-size: 2rem;"></i>
+						<h3>Manage Facetiles</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 mb-4">
+			<div class="card h-100">
+				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=groutcolors'); ?>">
+						<i class="icon-list" style="font-size: 2rem;"></i>
+						<h3>Manage Grout Colors</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 mb-4">
+			<div class="card h-100">
+				<div class="card-body text-center">
+					<a href="<?php echo Route::_('index.php?option=com_bookpro&view=contrasts'); ?>">
 						<i class="icon-cog" style="font-size: 2rem;"></i>
-						<h3>Settings</h3>
+						<h3>Color Contrast</h3>
 					</a>
 				</div>
 			</div>

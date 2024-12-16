@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 /**
  * Methods supporting a list of Bookpro records.
  */
-class SurfacesModel extends ListModel
+class ContrastsModel extends ListModel
 {
 
     /**
@@ -84,7 +84,7 @@ class SurfacesModel extends ListModel
 
         // Select the required fields from the table.
         $query->select('a.*');
-        $query->from('`#__bookpro_surfaces` AS a');
+        $query->from('`#__bookpro_contrasts` AS a');
 
        
 
