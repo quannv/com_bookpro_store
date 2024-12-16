@@ -29,21 +29,12 @@ $wa->useScript('keepalive')
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
 
-					<div class="control-group">
-						<div class="control-label"><?php echo $this->form->getLabel('title'); ?></div>
-						<div class="controls"><?php echo $this->form->getInput('title'); ?></div>
-					</div>
-
 					<?php
+
+					echo $this->form->renderField('title');
 					echo $this->form->renderField('state');
 
 					?>
-
-				
-					
-
-
-
 
 				</fieldset>
 			</div>

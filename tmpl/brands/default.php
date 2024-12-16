@@ -72,8 +72,6 @@ if ($saveOrder) {
 						<?php echo HtmlHelper::_('searchtools.sort',  'COM_BOOKPRO_TITLE', 'a.title', $listDirn, $listOrder); ?>
 					</th>
 
-
-
 					<?php if (isset($this->items[0]->id)) : ?>
 						<th width="1%" class="nowrap center hidden-phone">
 							<?php echo HtmlHelper::_('searchtools.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
