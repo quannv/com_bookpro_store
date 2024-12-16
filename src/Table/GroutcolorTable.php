@@ -21,14 +21,14 @@ use Joomla\Utilities\ArrayHelper;
 
 defined('_JEXEC') or die('Restricted access');
 
-class ColorTable extends Table
+class GroutcolorTable extends Table
 {
 
 	public function __construct(DatabaseDriver $db)
 	{
 
 		//$this->setColumnAlias('published', 'state');
-		parent::__construct('#__bookpro_colors', 'id', $db);
+		parent::__construct('#__bookpro_groutcolors', 'id', $db);
 		$this->setColumnAlias('published', 'state');
 	}
 

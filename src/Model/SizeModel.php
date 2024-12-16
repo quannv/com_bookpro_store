@@ -28,7 +28,7 @@ use Joomla\Database\ParameterType;
  *
  * @since  1.6
  */
-class TypeModel extends AdminModel
+class SizeModel extends AdminModel
 {
 
     /**
@@ -65,7 +65,7 @@ class TypeModel extends AdminModel
     public function getForm($data = [], $loadData = true)
     {
         // Get the form.
-        $form = $this->loadForm('com_bookpro.type', 'type', ['control' => 'jform', 'load_data' => $loadData]);
+        $form = $this->loadForm('com_bookpro.size', 'size', ['control' => 'jform', 'load_data' => $loadData]);
 
         if (empty($form)) {
             return false;
