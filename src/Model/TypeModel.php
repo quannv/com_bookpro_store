@@ -28,7 +28,7 @@ use Joomla\Database\ParameterType;
  *
  * @since  1.6
  */
-class AreaModel extends AdminModel
+class TypeModel extends AdminModel
 {
 
     /**
@@ -45,7 +45,7 @@ class AreaModel extends AdminModel
      * @var    string
      * @since  3.2
      */
-    public $typeAlias = 'com_bookpro.area';
+    public $typeAlias = 'com_bookpro.type';
 
 
 

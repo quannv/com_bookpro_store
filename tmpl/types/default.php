@@ -27,7 +27,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 $canOrder	= $user->authorise('core.edit.state', 'com_bookpro');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder) {
-	$saveOrderingUrl = 'index.php?option=com_bookpro&task=areas.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_bookpro&task=types.saveOrderAjax&tmpl=component';
 	HTMLHelper::_('sortablelist.sortable', 'busList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -47,7 +47,7 @@ if ($saveOrder) {
 
 
 <div id="j-main-container" class="span10">
-	<form action="<?php echo Route::_('index.php?option=com_bookpro&view=areas'); ?>" method="post" name="adminForm" id="adminForm">
+	<form action="<?php echo Route::_('index.php?option=com_bookpro&view=types'); ?>" method="post" name="adminForm" id="adminForm">
 
 		<?php
 		// Search tools bar
@@ -101,7 +101,7 @@ if ($saveOrder) {
 									<span class="sortable-handler hasTooltip <?php echo $disableClassName ?>" title="<?php echo $disabledLabel ?>">
 										<i class="icon-menu"></i>
 									</span>
-									<input type="text" style="display:none" name="order[]" size="5" value="<?php echo $item->ordering; ?>" class="width-20 text-area-order " />
+									<input type="text" style="display:none" name="order[]" size="5" value="<?php echo $item->ordering; ?>" class="width-20 text-type-order " />
 								<?php else : ?>
 									<span class="sortable-handler inactive">
 										<i class="icon-menu"></i>
@@ -114,13 +114,13 @@ if ($saveOrder) {
 						</td>
 						<?php if (isset($this->items[0]->state)) : ?>
 							<td class="center">
-								<?php echo HtmlHelper::_('jgrid.published', $item->state, $i, 'areas.', true, 'cb'); ?>
+								<?php echo HtmlHelper::_('jgrid.published', $item->state, $i, 'types.', true, 'cb'); ?>
 							</td>
 						<?php endif; ?>
 
 						<td>
 
-							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=area.edit&id=' . (int) $item->id); ?>">
+							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=type.edit&id=' . (int) $item->id); ?>">
 								<?php echo $this->escape($item->title); ?></a>
 
 						</td>

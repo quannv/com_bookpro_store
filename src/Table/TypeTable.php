@@ -28,7 +28,7 @@ class TypeTable extends Table
 	{
 
 		//$this->setColumnAlias('published', 'state');
-		parent::__construct('#__bookpro_type', 'id', $db);
+		parent::__construct('#__bookpro_types', 'id', $db);
 		$this->setColumnAlias('published', 'state');
 	}
 
