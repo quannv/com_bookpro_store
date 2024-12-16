@@ -46,6 +46,13 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('thickness_id');  ?>
 		<?php echo $this->form->renderField('effects_id');  ?>
 
+		<?php echo $this->form->renderField('contrast_id');  ?>
+		<?php echo $this->form->renderField('surface_id');  ?>
+		<?php echo $this->form->renderField('type_id');  ?>
+		<?php echo $this->form->renderField('facetile_id');  ?>
+		<?php echo $this->form->renderField('size_id');  ?>
+
+
 
 		<?php echo $this->form->renderField('state');  ?>
 		<?php echo HtmlHelper::_('bootstrap.endTab');
