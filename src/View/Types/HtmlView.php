@@ -9,7 +9,7 @@
  * @version 	$Id: view.html.php 26 2012-07-08 16:07:54Z quannv $
  **/
 
-namespace Joombooking\Component\Bookpro\Administrator\View\Areas;
+namespace Joombooking\Component\Bookpro\Administrator\View\Types;
 
 defined('_JEXEC') or die('Restricted access');
 
@@ -18,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Toolbar\ToolbarHelper;
-use Joombooking\Component\Bookpro\Administrator\Model\AreasModel;
+use Joombooking\Component\Bookpro\Administrator\Model\TypesModel;
 
 class HtmlView extends BaseHtmlView
 {
