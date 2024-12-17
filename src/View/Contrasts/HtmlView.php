@@ -40,13 +40,13 @@ class HtmlView extends BaseHtmlView
 
     protected function addToolbar()
     {
-        ToolbarHelper::title(Text::_('Manage groutcolors'), 'location');
-        ToolBarHelper::addNew('groutcolors.add');
-        ToolBarHelper::editList('groutcolors.edit');
+        ToolbarHelper::title(Text::_('Color Contrasts'), 'location');
+        ToolBarHelper::addNew('contrasts.add');
+        ToolBarHelper::editList('contrasts.edit');
         ToolBarHelper::divider();
-        ToolBarHelper::publish('groutcolorss.publish', 'Publish', true);
-        ToolBarHelper::unpublish('groutcolorss.unpublish', 'UnPublish', true);
+        ToolBarHelper::publish('contrastss.publish', 'Publish', true);
+        ToolBarHelper::unpublish('contrastss.unpublish', 'UnPublish', true);
         ToolBarHelper::divider();
-        ToolBarHelper::deleteList('', 'groutcolorss.delete');
+        ToolBarHelper::deleteList('', 'contrastss.delete');
     }
 }

@@ -49,7 +49,7 @@ class HtmlView extends BaseHtmlView
 
 		$isNew      = ($this->item->id == 0);
 		ToolbarHelper::title(
-			$isNew ? Text::_('COM_BOOKPRO_MANAGER_NEW') : Text::_('COM_BOOKPRO_MANAGER_EDIT'),
+			$isNew ? Text::_('New') : Text::_('Edit Product'),
 			'bookmark'
 		);
 

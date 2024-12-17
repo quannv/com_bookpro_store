@@ -16,6 +16,7 @@ defined('_JEXEC') or die('Restricted access');
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Toolbar\ToolbarHelper;
+use Joombooking\Component\Bookpro\Administrator\Model\GroutColorsModels;
 
 class HtmlView extends BaseHtmlView
 {
@@ -40,7 +41,7 @@ class HtmlView extends BaseHtmlView
 
     protected function addToolbar()
     {
-        ToolbarHelper::title(Text::_('Manage groutcolors'), 'location');
+        ToolbarHelper::title(Text::_('Groutcolors'), 'location');
         ToolBarHelper::addNew('groutcolors.add');
         ToolBarHelper::editList('groutcolors.edit');
         ToolBarHelper::divider();

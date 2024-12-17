@@ -38,6 +38,7 @@ $wa->useScript('keepalive')
 
 		<?php echo $this->form->renderField('sku'); ?>
 		<?php echo $this->form->renderField('title'); ?>
+		<?php echo $this->form->renderField('type_id');  ?>
 		<?php echo $this->form->renderField('design_id');  ?>
 		<?php echo $this->form->renderField('color_id');  ?>
 		<?php echo $this->form->renderField('brand_id');  ?>
@@ -51,8 +52,7 @@ $wa->useScript('keepalive')
 		<?php echo $this->form->renderField('type_id');  ?>
 		<?php echo $this->form->renderField('facetile_id');  ?>
 		<?php echo $this->form->renderField('size_id');  ?>
-
-
+		<?php echo $this->form->renderField('groutcolor_id');  ?>
 
 		<?php echo $this->form->renderField('state');  ?>
 		<?php echo HtmlHelper::_('bootstrap.endTab');
@@ -69,7 +69,7 @@ $wa->useScript('keepalive')
 
 
 		<?php echo $this->form->renderField('image'); ?>
-		<?php echo $this->form->renderField('images'); ?>
+	
 
 		<?php echo HtmlHelper::_('bootstrap.endTab'); ?>
 

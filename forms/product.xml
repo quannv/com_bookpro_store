@@ -72,6 +72,12 @@
 			
 		/>
 
+		<field name="type_id" type="type"
+			class="inputbox"
+			label="Type"
+			required="true"
+		/>
+
 		<field name="surface_id" type="surface"
 			class="inputbox"
 			label="Surface"
@@ -96,7 +102,7 @@
 			required="true"
 		/>
 
-		<field name="contrast" type="text"
+		<field name="contrast_id" type="contrast"
 			class="inputbox"
 			label="Contrast"
 			required="true"

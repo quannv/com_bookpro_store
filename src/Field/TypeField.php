@@ -19,10 +19,10 @@ use Joomla\CMS\Language\Text;
 
 defined('_JEXEC') or die('Restricted access');
 
-class ContrastField extends ListField
+class TypeField extends ListField
 {
 
-    protected $type = 'Contrast';
+    protected $type = 'Facetitle';
 
     public function getOptions()
     {
@@ -36,12 +36,12 @@ class ContrastField extends ListField
                 $db->quoteName('title', 'text'),
             ]
         )
-        ->from('#__bookpro_contrasts')->order('title ASC');
+        ->from('#__bookpro_types')->order('title ASC');
 
         $db->setQuery($query);
         try {
             $options = $db->loadObjectList();
-            array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_CONTRAST')));
+            array_unshift($options, HTMLHelper::_('select.option', '0', Text::_('COM_BOOKPRO_SELECT_TYPE')));
             return $options;
         } catch (\RuntimeException $e) {
             Factory::getApplication()->enqueueMessage($e->getMessage(), 'error');
