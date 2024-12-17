@@ -66,44 +66,61 @@ class ProductsModel extends ListModel
         $db = $this->getDatabase();
         $query = $db->getQuery(true);
         $query->select(array(
-            'product.*,brands.title AS brand_title',
+            'a.*,brands.title AS brand_title',
             'designs.title AS design_title',
             "(SELECT GROUP_CONCAT(title SEPARATOR ', ')
             FROM #__bookpro_areas
-            WHERE FIND_IN_SET(id, product.areas_id)) AS area_titles",
+            WHERE FIND_IN_SET(id, a.areas_id)) AS area_titles",
             "(SELECT GROUP_CONCAT(title SEPARATOR ', ')
             FROM #__bookpro_effects
-            WHERE FIND_IN_SET(id, product.effects_id)) AS effect_titles",
+            WHERE FIND_IN_SET(id, a.effects_id)) AS effect_titles",
         ));
 
-        $query->from('#__bookpro_products AS product');
+        $query->from('#__bookpro_products AS a');
       
-        $query->join('left', '#__bookpro_brands AS brands ON brands.id = product.brand_id ');
-        $query->join('left', '#__bookpro_designs AS designs ON designs.id = product.design_id ');
-        $query->join('left', '#__bookpro_thicknesss AS thickness ON thickness.id = product.thickness_id ');
+        $query->join('left', '#__bookpro_brands AS brands ON brands.id = a.brand_id ');
+        $query->join('left', '#__bookpro_designs AS designs ON designs.id = a.design_id ');
+        $query->join('left', '#__bookpro_thicknesss AS thickness ON thickness.id = a.thickness_id ');
 
         
         $design_id = $this->getState('filter.design_id');
-        if (!empty($vehicle_id)) {
-            $query->where('(product.design_id = ' . (int) $design_id . ')');
+        if (!empty($design_id)) {
+            $query->where('(a.design_id = ' . (int) $design_id . ')');
         }
 
-       
+
+        $color_id = $this->getState('filter.color_id');
+        if (!empty($color_id)) {
+            $query->where('(a.color_id = ' . (int) $color_id . ')');
+        }
+
+        $type_id = $this->getState('filter.type_id');
+        if (!empty($type_id)) {
+            $query->where('(a.type_id = ' . (int) $type_id . ')');
+        }
+
+        if ($search = $this->getState('filter.search')) {
+           
+                $search = '%' . str_replace(' ', '%', trim($search)) . '%';
+                $query->where('(' . $db->quoteName('a.title') . ' LIKE :search1 OR ' . $db->quoteName('a.sku') . ' LIKE :search2)')
+                ->bind([':search1', ':search2'], $search);
+        }
+        
 
         $state = $this->getState('filter.state');
         if (!empty($state)) {
-            $query->where('(product.state = ' . (int) $state . ')');
+            $query->where('(a.state = ' . (int) $state . ')');
         }
 
         $orderCol = $this->state->get('list.ordering');
         $orderDirn = $this->state->get('list.direction');
         if (empty($orderCol) || empty($orderDirn)) {
-            $orderCol = 'product.id';
+            $orderCol = 'a.id';
             $orderDirn = 'ASC';
         }
 
 
-        $query->group('product.id');
+        $query->group('a.id');
 
        // echo $db->replacePrefix((string) $query);
         //die;

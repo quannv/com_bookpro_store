@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 /**
  * Methods supporting a list of Bookpro records.
  */
-class GroutColorsModel extends ListModel
+class GroutcolorsModel extends ListModel
 {
 
     /**

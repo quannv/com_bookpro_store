@@ -30,7 +30,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 	<form action="<?php echo Route::_('index.php?option=com_bookpro&view=products'); ?>" method="post" name="adminForm" id="adminForm">
 		<?php
 		// Search tools bar
-		//echo LayoutHelper::render('joomla.searchtools.default', ['view' => $this]);
+		echo LayoutHelper::render('joomla.searchtools.default', ['view' => $this]);
 		?>
 
 		<table class="table">
@@ -73,7 +73,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 						<td class="checkboxCell"><?php echo HtmlHelper::_('grid.checkedout', $subject, $i); ?>
 						</td>
 						<td>
-							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'products.', true, 'cb', null, null); ?>
+							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'a.', true, 'cb', null, null); ?>
 						</td>
 						<td>
 							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=product.edit&id=' . $subject->id); ?>">
