@@ -40,8 +40,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 					<th width="1%" class="hidden-phone"><?php echo HtmlHelper::_('grid.checkall'); ?>
 
 					</th>
-					<th width="1%"><?php echo HtmlHelper::_('grid.sort', Text::_('JSTATUS'), 'state', $listDirn, $listOrder); ?>
-					</th>
+
 
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_SKU'); ?>
 
@@ -54,7 +53,25 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_DESIGN'); ?>
 					</th>
 
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_COLOR'); ?>
+					</th>
+
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_SIZE'); ?>
+					</th>
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_TYPETILE'); ?>
+					</th>
+
+					<th width="5%"><?php echo Text::_('COM_BOOKPRO_SURFACE'); ?>
+					</th>
+
 					<th width="5%"><?php echo Text::_('COM_BOOKPRO_BRAND'); ?>
+
+					</th>
+
+					<th width="1%"><?php echo HtmlHelper::_('grid.sort', Text::_('JSTATUS'), 'state', $listDirn, $listOrder); ?>
+					</th>
+					<th width="1%" class="nowrap center hidden-phone">
+						<?php echo HtmlHelper::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 					</th>
 
 
@@ -72,9 +89,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 						<td class="checkboxCell"><?php echo HtmlHelper::_('grid.checkedout', $subject, $i); ?>
 						</td>
-						<td>
-							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'a.', true, 'cb', null, null); ?>
-						</td>
+
 						<td>
 							<a href="<?php echo Route::_('index.php?option=com_bookpro&task=product.edit&id=' . $subject->id); ?>">
 
@@ -89,12 +104,30 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 						<td><?php echo $subject->area_titles; ?>
 						</td>
+						<td><?php echo $subject->design_title; ?>
+						</td>
+
+						<td><?php echo $subject->color_title; ?>
+						</td>
+						<td><?php echo $subject->size_title; ?>
+						</td>
+
+						<td><?php echo $subject->type_title; ?>
+						</td>
+
+						<td><?php echo $subject->surface_title; ?>
+						</td>
 
 						<td><?php echo $subject->brand_title; ?>
 						</td>
 
-						<td><?php echo $subject->design_title; ?>
+						<td>
+							<?php echo HtmlHelper::_('jgrid.published', $subject->state, $i, 'a.', true, 'cb', null, null); ?>
 						</td>
+						
+							<td class="center hidden-phone">
+								<?php echo (int) $subject->id; ?>
+							</td>
 
 					<?php
 				}

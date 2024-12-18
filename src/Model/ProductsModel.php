@@ -67,6 +67,10 @@ class ProductsModel extends ListModel
         $query = $db->getQuery(true);
         $query->select(array(
             'a.*,brands.title AS brand_title',
+            'colors.title AS color_title',
+            'sizes.title AS size_title',
+            'types.title AS type_title',
+            'surfaces.title AS surface_title',
             'designs.title AS design_title',
             "(SELECT GROUP_CONCAT(title SEPARATOR ', ')
             FROM #__bookpro_areas
@@ -77,7 +81,11 @@ class ProductsModel extends ListModel
         ));
 
         $query->from('#__bookpro_products AS a');
-      
+
+        $query->join('left', '#__bookpro_colors AS colors ON colors.id = a.color_id ');
+        $query->join('left', '#__bookpro_sizes AS sizes ON sizes.id = a.size_id ');
+        $query->join('left', '#__bookpro_surfaces AS surfaces ON surfaces.id = a.surface_id ');
+        $query->join('left', '#__bookpro_types AS types ON types.id = a.type_id ');
         $query->join('left', '#__bookpro_brands AS brands ON brands.id = a.brand_id ');
         $query->join('left', '#__bookpro_designs AS designs ON designs.id = a.design_id ');
         $query->join('left', '#__bookpro_thicknesss AS thickness ON thickness.id = a.thickness_id ');
