@@ -27,7 +27,7 @@ class EffectField extends ListField
 	public function getInput()
 	{
 
-		HTMLHelper::_('formbehavior.chosen', 'select');
+		HTMLHelper::_('formbehavior.chosen', '#' . $this->id);
 		// Fetch the options
 		$options = $this->getOptions();
 
@@ -47,7 +47,8 @@ class EffectField extends ListField
 		return HTMLHelper::_('select.genericlist', $options, $this->name, [
 			'multiple' => true,
 			
-			'style' => 'width: 100%;'
+			'style' => 'width: 100%;',
+			'class'=>'form-select'
 			// Adjust size as needed
 		], 'value', 'text', $selectedValues, $this->id);
 	}

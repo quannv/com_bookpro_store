@@ -83,7 +83,8 @@ class HtmlView extends BaseHtmlView
         parent::display($tpl);
     }
     protected function addToolbar()
-    {
+    {   
+        ToolbarHelper::custom('products.import', 'upload', '', 'Import', false);
         ToolbarHelper::title(Text::_('Products'), 'list');
         ToolBarHelper::addNew('product.add');
         ToolBarHelper::editList('product.edit');

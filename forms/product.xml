@@ -79,31 +79,31 @@
 		/>
 
 		<field name="surface_id" type="surface"
-			class="inputbox"
+			
 			label="Surface"
 			required="true"
 		/>
 
 		<field name="size_id" type="surface"
-			class="inputbox"
+			
 			label="Size"
 			required="true"
 		/>
 
 		<field name="facetile_id" type="facetile"
-			class="inputbox"
+			
 			label="Facetile"
 			required="true"
 		/>
 
 		<field name="groutcolor_id" type="groutcolor"
-			class="inputbox"
+			
 			label="Grout Color"
 			required="true"
 		/>
 
 		<field name="contrast_id" type="contrast"
-			class="inputbox"
+			
 			label="Contrast"
 			required="true"
 		/>

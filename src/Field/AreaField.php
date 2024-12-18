@@ -29,7 +29,7 @@ class AreaField extends ListField
 	public function getInput()
 	{
 
-		HTMLHelper::_('formbehavior.chosen', 'select');
+		HTMLHelper::_('formbehavior.chosen', '#' . $this->id);
 		// Fetch the options
 		$options = $this->getOptions();
 
